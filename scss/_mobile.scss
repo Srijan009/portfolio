@@ -1,0 +1,85 @@
+// // for extra large wide screens 
+ @include mediaXl{
+     main#work {
+         .project{
+             display: grid;
+             grid-template-columns: repeat(4,1fr);
+         }
+ }
+}
+// for desktops laptops
+@include mediaLg{
+    .project{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+// // for tablets and small laptops
+ @include mediaMd{
+    main{
+        align-items: center;
+        text-align: center;
+        .lg-heading{
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+    ul.menu-nav,div.menu-branding{
+        float: none;
+        width: 100%;
+        min-height: 0;
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+    }
+    .menu-nav {
+        height: 70vh;
+        transform: translate3d(-100%,0,0);
+        font-size: 24px;
+    }
+    .menu-branding {
+        height: 30vh;
+        transform: translate3d(100%,0,0);
+        .portrait{
+            width: 150px;
+            height: 150px;
+            margin:5px 3px 5px 3px;
+        }
+     }
+ }
+// Smartphones
+ @include mediaSm{
+    main#home h1{
+        margin-top: 10vh;
+        font-size:2rem;
+    }    
+    main#home h2{
+        padding: 2rem;
+        font-size: 1rem;
+       padding:0 15px 0 15px;  
+    }    
+      main#about h1{
+        margin-top: 10vh;
+        font-size:2rem;
+    }    
+
+    main#work h1{
+        margin-top: 10vh;
+        font-size:2rem;
+    }    
+    main#work h2{
+        padding: 2rem;
+        font-size: 1rem;
+       padding:0 15px 0 15px;  
+    }    
+    main#work {
+        .project{
+            display: grid;
+            grid-template-columns: 1fr;
+         }       
+    }
+    main#contact .lg-heading{
+        margin-top: 10vh;
+        font-size:2rem;
+    }
+ }

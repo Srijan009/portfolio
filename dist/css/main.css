@@ -1,3 +1,4 @@
+/*===========  MENU TOGGLER RIGHT ===================*/
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -20,9 +21,155 @@
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+/*===========  MENU TOGGLER RIGHT ===================*/
+/*===========  MENU SECTION ===================*/
+.menu {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0.8;
+  /*===========  MENU-BRANDING SECTION ===================*/
+  /*===========  MENU-BRANDING SECTION ===================*/
+  /*===========  MENU-NAV SECTION ===================*/
+  /*===========  MENU-NAV SECTION ===================*/ }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-branding {
+    background: #071826;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      height: 250px;
+      width: 250px;
+      background: url("../img/srijan2.jpg");
+      border-radius: 50%;
+      background-size: cover;
+      border: 3px solid yellow; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: #030a10;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-nav .nav-item {
+      transform: translate3d(600px, 0, 0);
+      transition: all 0.5s ease-out; }
+      .menu-nav .nav-item.show {
+        transform: translate3d(0, 0, 0); }
+      .menu-nav .nav-item.active > a {
+        color: yellow; }
+    .menu-nav .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 300px;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.5s ease-out; }
+      .menu-nav .nav-link:hover {
+        color: yellow; }
+
+/*===========  MENU SECTION ===================*/
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+@media screen and (min-width: 1771) {
+  main#work .project {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1770px) {
+  .project {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      width: 150px;
+      height: 150px;
+      margin: 5px 3px 5px 3px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+    font-size: 2rem; }
+  main#home h2 {
+    padding: 2rem;
+    font-size: 1rem;
+    padding: 0 15px 0 15px; }
+  main#about h1 {
+    margin-top: 10vh;
+    font-size: 2rem; }
+  main#work h1 {
+    margin-top: 10vh;
+    font-size: 2rem; }
+  main#work h2 {
+    padding: 2rem;
+    font-size: 1rem;
+    padding: 0 15px 0 15px; }
+  main#work .project {
+    display: grid;
+    grid-template-columns: 1fr; }
+  main#contact .lg-heading {
+    margin-top: 10vh;
+    font-size: 2rem; } }
+
+* {
+  box-sizing: border-box; }
+
 body {
-  background-color: #444;
-  color: #fff; }
+  background: #071826;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdanda,san-serif;
+  line-height: 1.5;
+  background-color: #071826; }
   body#bg-img {
     background: url(../img/showcase.jpg);
     background-attachment: fixed;
@@ -34,19 +181,8 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      background: rgba(68, 68, 68, 0.9);
+      background: rgba(7, 24, 38, 0.9);
       z-index: -1; }
-
-* {
-  box-sizing: border-box; }
-
-body {
-  background: #444;
-  color: #fff;
-  height: 100%;
-  margin: 0;
-  font-family: 'Segoe UI',Tahoma,Geneva,Verdanda,san-serif;
-  line-height: 1.5; }
 
 h1, h2, h3 {
   margin: 0;
@@ -56,7 +192,7 @@ h1, h2, h3 {
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    background: rgba(9, 29, 47, 0.5); }
 
 a {
   color: #fff;
@@ -67,20 +203,71 @@ header {
   z-index: 2;
   width: 100%; }
 
+/*===========  secondary span text ===================*/
 .text-secondary {
-  color: #eece1a; }
+  color: yellow !important; }
 
+/*===========  secondary span text ===================*/
+/*===========  main section area  ===================*/
 main {
   padding: 4rem;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden;
+  /*===========  project section area  ===================*/
+  /*===========  project section area  ===================*/ }
   main .icons {
     margin-top: 1rem; }
   main a {
     padding: 0.4rem; }
     main a:hover {
-      color: #eece1a;
+      color: yellow;
       transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+  main#about .img-thumbnail {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    opacity: 0.9; }
+  main .card {
+    background-color: #333;
+    border-bottom: 3px solid yellow !important; }
+  main .project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem; }
+    main .project img {
+      width: 100%;
+      border: 5px solid #fff;
+      margin-bottom: 10px; }
+      main .project img:hover {
+        border: 10px solid yellow;
+        opacity: 0.6;
+        transition: all 0.5s ease-out; }
+    main .project-element {
+      padding: 0.7rem; }
+    main .project .btn-light, main .project .btn-dark {
+      display: block;
+      text-decoration: none;
+      margin-left: 10px;
+      margin-bottom: 5px; }
+    main .project .btn-light:hover {
+      background: yellow;
+      transition: all 0.5s ease-out; }
+    main .project .btn-dark:hover {
+      background: yellow;
+      transition: all 0.5s ease-out; }
+  main#contact .lg-heading {
+    margin-bottom: 2rem; }
+
+/*===========  main section area  ===================*/
+/*===========  contact section area  ===================*/
+/*===========  contact section area  ===================*/
+/*===========  footer section area  ===================*/
+footer {
+  background-color: #333;
+  padding: 20px 0 20px 0; }
+
+/*===========  footer section area  ===================*/

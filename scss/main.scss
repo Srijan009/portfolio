@@ -1,21 +1,19 @@
 @import 'config';
 @import 'menu';
-body{
-    background-color: $primay-color;
-    color:#fff;
-    @include background();
-}
+@import 'mobile';
 
 *{
     box-sizing: border-box;
 }
 body{
-    background: $primay-color;
-    color: #fff;
+    background: $primary-color;
+    color:set-text-color($primary-color);
     height: 100%;
     margin:0;
     font-family: 'Segoe UI',Tahoma,Geneva,Verdanda,san-serif;
     line-height: 1.5;
+    background-color: $primary-color;
+    @include background;
 }
 // heading style
 h1,h2,h3{
@@ -27,7 +25,7 @@ h1,h2,h3{
     &.sm-heading{
         margin-bottom:2rem;
         padding:0.2rem 1rem;
-        background: rgba(lighten($primay-color,2),0.5);
+        background: rgba(lighten($primary-color,2),0.5);
     }
 }
 a{
@@ -39,12 +37,21 @@ header{
     z-index: 2;
     width:100%;
 }
+/*===========  secondary span text ===================*/
+
+
 .text-secondary{
- color:$secondary-color;
+ color:$secondary-color !important;
 }
+
+
+/*===========  secondary span text ===================*/
+/*===========  main section area  ===================*/
+
 main{
     padding:4rem;
     height:100%;
+    overflow: hidden;
     .icons{
         margin-top:1rem;
     }
@@ -61,4 +68,72 @@ main{
          margin-top:20vh;
      }
     }
-}
+    &#about .img-thumbnail{
+        height: 250px;
+        width: 250px;
+        border-radius: 100%;
+        opacity: 0.9;
+    }
+    .card{
+        background-color:$bg-grey;
+        border-bottom:3px solid $secondary-color !important;
+    }
+     /*===========  project section area  ===================*/
+
+    .project{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap:1rem; 
+        img{
+        width: 100%;
+        border:5px solid #fff;
+        margin-bottom: 10px;
+        &:hover{
+            border: 10px solid $secondary-color;
+            opacity: 0.6;
+            @include easeOut;
+        }
+        }
+        &-element{
+            padding: 0.7rem;
+        }
+        .btn-light,.btn-dark{
+            //padding: 5px;
+            display:block;
+            text-decoration: none;
+            margin-left: 10px;
+            margin-bottom: 5px;
+        }
+        .btn-light{
+            &:hover{
+                background: $secondary-color;
+                @include easeOut;
+            }
+        }
+        .btn-dark{
+            &:hover{
+                background: $secondary-color;
+                @include easeOut;
+            }
+        }
+       
+    }
+    /*===========  project section area  ===================*/
+    &#contact {
+        .lg-heading{
+            margin-bottom:2rem;
+        }
+    }
+ }
+ /*===========  main section area  ===================*/
+  /*===========  contact section area  ===================*/
+
+
+
+  /*===========  contact section area  ===================*/
+ /*===========  footer section area  ===================*/
+ footer{
+    background-color: $bg-grey;
+    padding: 20px 0 20px 0;
+ }
+ /*===========  footer section area  ===================*/
